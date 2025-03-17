@@ -503,6 +503,8 @@ class TextProcessor:
 
     def process_text(self, text: str) -> str:
         """Main method to process text containing numbers and symbols."""
+        # Remove commas and hyphens from the text
+        text = text.replace(",", "").replace("-", " ")
         # Handle known abbreviations explicitly
         text = self._handle_abbreviations(text)
         # Process letter-number combinations first
